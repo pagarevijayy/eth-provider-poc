@@ -1,4 +1,4 @@
-import EventEmitter from 'events';
+import { EventEmitter } from 'events';
 import type {
     IJsonRpcConnection,
     JsonRpcPayload,
@@ -36,17 +36,25 @@ export class Connection extends EventEmitter implements IJsonRpcConnection {
             }
         });
     }
-    on(event: string, listener: any): void {
-        throw new Error('Method not implemented.');
+
+    on(event: string | symbol, listener: (...args: any[]) => void): this {
+        this.events.on(event, listener);
+        return this;
     }
-    once(event: string, listener: any): void {
-        throw new Error('Method not implemented.');
+
+    once(event: string | symbol, listener: (...args: any[]) => void): this {
+        this.events.once(event, listener);
+        return this;
     }
-    off(event: string, listener: any): void {
-        throw new Error('Method not implemented.');
+
+    off(event: string | symbol, listener: (...args: any[]) => void): this {
+        this.events.off(event, listener);
+        return this;
     }
-    removeListener(event: string, listener: any): void {
-        throw new Error('Method not implemented.');
+
+    removeListener(event: string | symbol, listener: (...args: any[]) => void): this {
+        this.events.removeListener(event, listener);
+        return this;
     }
 
     async open() {
