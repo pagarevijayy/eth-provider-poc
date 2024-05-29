@@ -12,7 +12,7 @@
     "content_scripts": [
         {
             "all_frames": true,
-            "js": ["./src/content-script/index.ts"],
+            "js": ["src/content-script/index.ts"],
             "matches": [
                 "https://*/*",
                 "http://localhost/*",
@@ -21,11 +21,6 @@
             "run_at": "document_start"
         }
     ],
-    "background": {
-        "service_worker": "./src/background/background.ts",
-        "type": "module",
-        "persistent": false
-    },
     "action": {
         "default_icon": "icons/icon-48x48.png",
         "default_popup": "index.html"
