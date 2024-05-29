@@ -1,0 +1,17 @@
+{
+    "name": "ETH Provider POC",
+    "description": "Eth provider",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "icons": {
+        "48": "icons/icon-48x48.png",
+        "72": "icons/icon-72x72.png",
+        "96": "icons/icon-96x96.png",
+        "128": "icons/icon-128x128.png"
+    },
+    "action": {
+        "default_icon": "icons/icon-48x48.png",
+        "default_popup": "index.html"
+    },
+    "permissions": ["activeTab", "scripting", "storage"]
+}
